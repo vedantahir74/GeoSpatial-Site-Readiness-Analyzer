@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌍 GeoSpatial Site Readiness Analyzer
 
 A professional AI-powered location intelligence platform for commercial real estate and infrastructure site selection. Analyze any location in Ahmedabad, Gujarat, India and get comprehensive site readiness scores based on demographics, transport, infrastructure, market potential, and environmental factors.
@@ -147,3 +148,6 @@ If you encounter issues:
 ---
 
 **Ready to analyze geospatial site readiness? Run the application and start exploring! 🌍📊**
+=======
+# GeoSpatial-Site-Readiness-Analyzer
+>>>>>>> 7c3821a1d279f2f34f8b8023fa86b1148d41458c
