@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map Integration Test</title>
+    <script>
+        async function testAPI() {
+            try {
+                const response = await fetch('http://localhost:8000/api/v1/enhanced/score', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ lat: 23.0225, lng: 72.5714, use_case: 'retail' })
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('✅ API Test Successful:', data);
+                    document.getElementById('result').innerHTML = `
+                        <h3>✅ API Working!</h3>
+                        <p>Score: ${data.composite_score}/100</p>
+                        <p>Recommendation: ${data.recommendation.verdict}</p>
+                    `;
+                } else {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+            } catch (error) {
+                console.error('❌ API Test Failed:', error);
+                document.getElementById('result').innerHTML = `<h3>❌ API Error: ${error.message}</h3>`;
+            }
+        }
+        
+        function testFrontend() {
+            fetch('http://localhost:3001/')
+                .then(response => {
+                    if (response.ok) {
+                        document.getElementById('frontend-status').innerHTML = '✅ Frontend accessible on port 3001';
+                    } else {
+                        document.getElementById('frontend-status').innerHTML = '❌ Frontend not accessible';
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('frontend-status').innerHTML = '❌ Frontend connection failed';
+                });
+        }
+        
+        window.onload = function() {
+            testAPI();
+            testFrontend();
+        }
+    </script>
+</head>
+<body>
+    <h1>GeoSpatial Site Analyzer - Integration Test</h1>
+    <div id="frontend-status">Testing frontend...</div>
+    <div id="result">Testing API...</div>
+    
+    <h2>Manual Test Instructions:</h2>
+    <ol>
+        <li>Open <a href="http://localhost:3001" target="_blank">http://localhost:3001</a></li>
+        <li>You should see the interactive MapLibre GL JS map</li>
+        <li>Click anywhere on the map to analyze site readiness</li>
+        <li>Check that the sidebar shows detailed analysis results</li>
+        <li>Try different use cases (retail, office, warehouse, etc.)</li>
+    </ol>
+</body>
+</html>

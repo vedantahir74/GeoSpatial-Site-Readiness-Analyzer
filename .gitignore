@@ -1,0 +1,19 @@
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+
+# Database
+*.sqlite
+*.db
+*.sqlite-shm
+*.sqlite-wal
+
+# Env
+.env
+
+# Build
+dist/
+build/
