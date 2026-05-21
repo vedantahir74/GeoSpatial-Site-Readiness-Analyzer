@@ -73,10 +73,10 @@ Navigate to `http://localhost:3000` and start analyzing sites!
 - **Rajkot**: `22.3039, 70.8022`
 
 ### 📊 **Understanding Scores**
-- **80-100**: Excellent location ✅
-- **65-79**: Good location 👍
-- **50-64**: Moderate location ⚠️
-- **Below 50**: Poor location ❌
+- **80-100**: Excellent location 
+- **65-79**: Good location 
+- **50-64**: Moderate location 
+- **Below 50**: Poor location 
 
 
 ## 🛠️ Technology Stack
@@ -136,10 +136,6 @@ npm install
 3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
 4. **Push** to the branch (`git push origin feature/amazing-feature`)
 5. **Open** a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
